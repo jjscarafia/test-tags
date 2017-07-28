@@ -12,8 +12,8 @@ set -e
 #     docker push ${repoName}:${tag}
 # done
 # BUILD_DATE=`date -u +”%Y-%m-%dT%H:%M:%SZ”`
-BUIL_DATE=`date -u +”%d-%m-%S”`
-TAG=$CACHE_TAG-$BUIL_DATE
+BUIL_DATE=`date -u +%d.%m.%S`
+TAG=$CACHE_TAG.$BUIL_DATE
 
 docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
 docker push $DOCKER_REPO:$TAG
